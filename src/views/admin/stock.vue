@@ -8,15 +8,22 @@
             <div class="row">
               <div class="col-xs-12">
                 <h3 class="header smaller lighter blue">股票详情</h3>
+                <p>
+                  <button @click="list()" class="btn btn-white btn-default btn-round">
+                    <i class="ace-icon fa fa-refresh"></i>
+                    刷新
+                  </button>
+                </p>
                 <table id="simple-table" class="table  table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>Price</th>
+                    <th>股票名称</th>
+                    <th>股票价格</th>
                     <th class="hidden-480">Clicks</th>
 
                     <th>
                       <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                      Update
+                      Change
                     </th>
                     <th class="hidden-480">Status</th>
 
@@ -25,10 +32,11 @@
                   </thead>
 
                   <tbody>
-                  <tr>
-                    <td>$45</td>
+                  <tr v-for="stock in stocks">
+                    <td>{{stock.name}}</td>
+                    <td>¥{{stock.currentPrice}}</td>
                     <td class="hidden-480">3,330</td>
-                    <td>Feb 12</td>
+                    <td>{{stock.change}}</td>
 
                     <td class="hidden-480">
                       <span class="label label-sm label-warning">Expiring</span>
@@ -106,7 +114,21 @@
 
 <script>
 export default {
-  name: "finance-stock"
+  name: "finance-stock",
+  data:function (){
+    return{
+      stocks: []
+    }
+  },
+  methods:{
+    list(){
+      let _this = this
+      _this.$ajax.get(process.env.VUE_APP_SERVER + "/service/stock/list").then((respond) => {
+        console.log(respond)
+        _this.stocks = respond.data
+      })
+    }
+  }
 }
 </script>
 

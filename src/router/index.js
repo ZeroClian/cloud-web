@@ -5,6 +5,7 @@ import Admin from '@/views/admin'
 import Index from '@/views/admin/index'
 import Fund from '@/views/admin/fund'
 import Stock from '@/views/admin/stock'
+import Calendar from '@/views/admin/calendar'
 
 Vue.use(Router);
 
@@ -21,11 +22,17 @@ export default new Router({
         path: '/',
         name: 'admin',
         component: Admin,
-        children: [{
-            path: 'index',
-            name: 'index',
-            component: Index
-        },
+        children: [
+            {
+                path: 'index',
+                name: 'index',
+                component: Index
+            },
+            {
+                path: 'calendar',
+                name: 'calendar',
+                component: Calendar
+            },
             {
                 path: 'finance/fund',
                 name: 'finance/fund',

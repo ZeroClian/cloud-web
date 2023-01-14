@@ -8,7 +8,7 @@
               <div class="center">
                 <h1>
                   <i class="ace-icon fa fa-leaf green"></i>
-                  <span class="red">Tool</span>
+                  <span class="red">Cloud</span>
                   <span class="white" id="id-text2">Hub</span>
                 </h1>
                 <h4 class="light-blue " id="id-company-text">&copy; ZeroClian</h4>

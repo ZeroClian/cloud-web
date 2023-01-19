@@ -23,10 +23,10 @@ jobs:
       - name: upload file
         uses: appleboy/scp-action@v0.0.1
         with: 
-          host: ${{HOST}}
-          username: ${{USERNAME}}
-          password: ${{PASSWORD}}
+          host: ${{ HOST }}
+          username: ${{ USERNAME }}
+          password: ${{ PASSWORD }}
           port: 22
           source: "/dist"
-          target: ${{TARGET}}
+          target: ${{ TARGET }}
     

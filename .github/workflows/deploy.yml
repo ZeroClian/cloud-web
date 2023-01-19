@@ -28,5 +28,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 22
           scp_source: "./dist"
-          scp_target: ${{ ~ }}
+          scp_target: "~"
     

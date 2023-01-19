@@ -23,7 +23,7 @@ jobs:
       - name: upload file
         uses: appleboy/scp-action@v0.0.1
         with: 
-          host: ${{REMOTE_HOST}}
+          host: ${{HOST}}
           username: ${{USERNAME}}
           password: ${{PASSWORD}}
           port: 22
